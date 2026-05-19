@@ -10,11 +10,11 @@ const Child1 = ({ todos, handleComplete }) => {
           <li key={todo.id}>
             {todo.text}
 
-            {todo.completed ?(
-              <span>Complete</span>
+            {todo.completed ? (
+              <span>Completed</span>
             ) : (
               <button onClick={() => handleComplete(todo.id)}>
-                Complete
+                complete
               </button>
             )}
           </li>
