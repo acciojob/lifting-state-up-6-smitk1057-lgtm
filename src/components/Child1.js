@@ -11,7 +11,7 @@ const Child1 = ({ todos, handleComplete }) => {
             {todo.text}
 
             {todo.completed ?(
-              <span>{''}</span>
+              <span>Complete</span>
             ) : (
               <button onClick={() => handleComplete(todo.id)}>
                 Complete
