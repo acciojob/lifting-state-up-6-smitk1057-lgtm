@@ -8,13 +8,11 @@ const Child1 = ({ todos, handleComplete }) => {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
-            {todo.text}
+            {todo.text} {todo.completed ? "Completed" : ""}
 
-            {todo.completed ? (
-              <span>Completed</span>
-            ) : (
+            {!todo.completed && (
               <button onClick={() => handleComplete(todo.id)}>
-                complete
+                Complete
               </button>
             )}
           </li>
