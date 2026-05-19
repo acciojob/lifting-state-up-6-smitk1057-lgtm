@@ -1,28 +1,27 @@
-import React from "react"
+import React from "react";
 
-
-const Child1=({todos,handleComplete})=>{
-  
+const Child1 = ({ todos, handleComplete }) => {
   return (
-        
     <div>
-           <h2>Child Component</h2>
-          <ul>
-            {
-                todos.map((todo)=>(
-                    <li key={todo.id}>
-                        {todo.text} {todo.complete ?(""):""}
-                      {!todo.complete && (
-                        <button onClick={()=>handleComplete(todo.id)}>Complete</button>
-                      )}
-                    </li>
-                ))
-            }
-           </ul>
-           
+      <h2>Child Component</h2>
+
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            {todo.text}
+
+            {todo.completed ?(
+              <span>{''}</span>
+            ) : (
+              <button onClick={() => handleComplete(todo.id)}>
+                Complete
+              </button>
+            )}
+          </li>
+        ))}
+      </ul>
     </div>
-    )
-}
+  );
+};
 
-export default Child1
-
+export default Child1;
